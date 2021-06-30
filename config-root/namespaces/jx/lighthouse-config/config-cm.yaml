@@ -41,7 +41,7 @@ data:
         - needs-rebase
         repos:
         - FalkWinkler/jx3-kubernetes
-      target_url: http://lighthouse-jx./merge/status
+      target_url: http://lighthouse-jx.172.18.6.181.nip.io/merge/status
 kind: ConfigMap
 metadata:
   creationTimestamp: null
