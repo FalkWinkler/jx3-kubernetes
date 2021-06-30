@@ -1,0 +1,28 @@
+# Source: jenkins/templates/jcasc-config.yaml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: jenkins-jenkins-config-mystuff
+  namespace: jx-jenkins
+  labels:
+    "app.kubernetes.io/name": jenkins
+    "helm.sh/chart": "jenkins-3.4.1"
+    "app.kubernetes.io/managed-by": "Helm"
+    "app.kubernetes.io/instance": "jenkins"
+    "app.kubernetes.io/component": "jenkins-controller"
+    jenkins-jenkins-config: "true"
+    gitops.jenkins-x.io/pipeline: 'namespaces'
+  annotations:
+    meta.helm.sh/release-name: 'jenkins'
+data:
+  mystuff.yaml: |-
+    tool:
+      nodejs:
+        installations:
+        - name: "NodeJS"
+          properties:
+          - installSource:
+              installers:
+              - nodeJSInstaller:
+                  id: "15.7.0"
+                  npmPackagesRefreshHours: 72
