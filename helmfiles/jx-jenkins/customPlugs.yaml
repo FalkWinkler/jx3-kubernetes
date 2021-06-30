@@ -1,0 +1,14 @@
+controller:
+  JCasC:
+    configScripts:
+      mystuff: |
+        tool:
+          nodejs:
+            installations:
+            - name: "NodeJS"
+              properties:
+              - installSource:
+                  installers:
+                  - nodeJSInstaller:
+                      id: "15.7.0"
+                      npmPackagesRefreshHours: 72
